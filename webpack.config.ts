@@ -18,11 +18,10 @@ export default (env: BuildEnv) => {
 
     const PORT = env.port || 3000
 
-    const config: Configuration = buildWebpackConfig({
+    return buildWebpackConfig({
         mode,
         paths,
         isDev,
         port: PORT,
     })
-    return config
 }
