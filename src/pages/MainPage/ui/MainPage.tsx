@@ -1,13 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Counter } from 'entities/Counter';
+import { Input } from 'shared/ui/Input/Input';
+import MainIcon from 'shared/assets/icons/main.svg';
 
 const MainPage = () => {
     const { t } = useTranslation('main');
+
+    const [value, setValue] = useState('');
+
+    const onChange = (value: string) => {
+        setValue(value);
+    };
+
     return (
         <div>
             {t('Главная страница')}
-            <Counter />
+            <Input icon={<MainIcon />} value={value} onChange={onChange} />
         </div>
     );
 };

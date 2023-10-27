@@ -1,0 +1,28 @@
+.InputWrapper {
+  position:relative;
+}
+
+.icon {
+  position: absolute;
+  box-sizing:border-box;
+  stroke: var(--inverted-bg-color);
+  background: var(--additional-secondary-color) ;
+  top:50%;
+  left:2px;
+  transform: translateY(-50%);
+}
+
+.input {
+  border-radius: 4px;
+  min-height: 30px;
+  line-height: 26px;
+  padding: 4px 10px;
+  font-size: var(--font-size-m);
+  border:  1px solid var(--additional-secondary-color);
+  color: var(--primary-color);
+  background: var(--secondary-color);
+
+  &:focus {
+    outline: 1px solid var(--primary-color);
+  }
+}

@@ -34,7 +34,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
                 className={cls.collapseBtn}
                 type="button"
                 onClick={onToggle}
-                theme={ButtonTheme.BACKGROUND_INVERTED}
+                theme={ButtonTheme.BACKGROUND}
                 square
                 size={ButtonSize.L}
             >
@@ -43,7 +43,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
             <div className={cls.items}>
                 <AppLink
                     className={cls.item}
-                    theme={AppLinkTheme.SECONDARY}
+                    theme={AppLinkTheme.PRIMARY}
                     to={RoutePath.main}
                 >
                     <MainIcon className={cls.icon} />
@@ -51,7 +51,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
                 </AppLink>
                 <AppLink
                     className={cls.item}
-                    theme={AppLinkTheme.SECONDARY}
+                    theme={AppLinkTheme.PRIMARY}
                     to={RoutePath.about}
                 >
                     <AboutIcon className={cls.icon} />
