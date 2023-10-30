@@ -7,6 +7,7 @@ import {
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+import ESLintWebpackPlugin from 'eslint-webpack-plugin';
 import { BuildOptions } from './types/config';
 
 export function BuildPlugins({ paths, isDev }: BuildOptions): WebpackPluginInstance[] {
@@ -14,6 +15,7 @@ export function BuildPlugins({ paths, isDev }: BuildOptions): WebpackPluginInsta
         new HtmlWebpackPlugin({
             template: paths.html,
         }),
+        new ESLintWebpackPlugin(),
         new ProgressPlugin(),
         new MiniCssExtractPlugin({
             filename: 'css/[name].[contenthash:8].css',
