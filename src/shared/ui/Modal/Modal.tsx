@@ -3,6 +3,7 @@ import React, {
     ReactNode, useCallback, useEffect, useRef, useState,
 } from 'react';
 import { Portal } from 'shared/ui/Portal/Portal';
+import CloseIcon from 'shared/assets/icons/close.svg';
 import cls from './Modal.module.scss';
 
 interface ModalProps {
@@ -83,6 +84,9 @@ export const Modal = (props: ModalProps) => {
                         className={cls.content}
                         onClick={onContentClick}
                     >
+                        <div onClick={closeHandler} className={cls.close}>
+                            <CloseIcon />
+                        </div>
                         {children}
                     </div>
                 </div>

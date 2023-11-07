@@ -1,7 +1,7 @@
 .Button {
   cursor: pointer;
   color: var(--primary-color);
-  border-radius: 4px;
+  border-radius: 12px;
   padding: 6px 15px;
 }
 
@@ -34,6 +34,10 @@
   background: var(--inverted-bg-color);
   color: var(--inverted-primary-color);
   border: none;
+
+  &:hover {
+    filter: opacity(0.8);
+  }
 }
 
 .square.size_m {
@@ -64,4 +68,8 @@
 
 .size_xl {
   font: var(--font-xl);
+}
+
+:disabled {
+  opacity: 0.5;
 }

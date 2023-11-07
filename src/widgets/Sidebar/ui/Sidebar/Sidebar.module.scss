@@ -3,6 +3,7 @@
   width: var(--sidebar-width);
   background: var(--secondary-color);
   position: relative;
+  backdrop-filter: saturate(180%) blur(20px);
   transition: width 0.3s;
 }
 
