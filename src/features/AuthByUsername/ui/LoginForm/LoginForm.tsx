@@ -12,6 +12,7 @@ import {
     DynamicModuleLoader,
     ReducersList,
 } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { loginByUsername } from "../../model/services/loginByUsername/loginByUsername";
 import { GetLoginUsername } from "../../model/selectors/getLoginUsername/getLoginUsername";
 import { GetLoginPassword } from "../../model/selectors/getLoginPassword/getLoginPassword";
@@ -22,15 +23,15 @@ import cls from "./LoginForm.module.scss";
 
 export interface LoginFormProps {
     className?: string;
+    onSuccess: () => void;
 }
 
 const initialReducers: ReducersList = {
     loginForm: loginReducer,
 };
 
-const LoginForm = memo(({ className }: LoginFormProps) => {
-    const dispatch = useDispatch();
-    const appDispatch: AppDispatch = useDispatch();
+const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
+    const dispatch = useAppDispatch();
     const username = useSelector(GetLoginUsername);
     const password = useSelector(GetLoginPassword);
     const error = useSelector(GetLoginError);
@@ -44,9 +45,12 @@ const LoginForm = memo(({ className }: LoginFormProps) => {
         dispatch(loginActions.setPassword(value));
     }, [dispatch]);
 
-    const onLoginClick = useCallback(() => {
-        appDispatch(loginByUsername({ username, password }));
-    }, [appDispatch, password, username]);
+    const onLoginClick = useCallback(async () => {
+        const result = await dispatch(loginByUsername({ username, password }));
+        if (result.meta.requestStatus === "fulfilled") {
+            onSuccess();
+        }
+    }, [dispatch, onSuccess, password, username]);
 
     const { t } = useTranslation();
     return (

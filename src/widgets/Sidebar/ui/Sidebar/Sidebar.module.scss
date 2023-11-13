@@ -25,28 +25,12 @@
   bottom: 40px
 }
 
+
 .items {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.item {
-  display: flex;
-  align-items: center;
-  margin-top: 10px;
-  line-height: 24px;
-}
-
-.link {
-  margin-left: 10px;
-  font-weight: 400;
-  font-size: 14px;
-}
-
-.icon {
-  stroke: var(--inverted-bg-color);
 }
 
 .collapsed {

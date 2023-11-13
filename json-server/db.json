@@ -29,7 +29,14 @@
     }
   ],
   "profile": {
-    "name": "typicode"
+    "firstname": "Адель",
+    "lastname": "Файрузов",
+    "age": 22,
+    "country": "Russia",
+    "currency": "RUB",
+    "city": "Elabuga",
+    "username": "adel",
+    "avatar": "https://pf4.patternfly.org/assets/images/img_avatar-light.svg"
   },
   "users": [
     {
