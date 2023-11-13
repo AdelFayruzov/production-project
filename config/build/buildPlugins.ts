@@ -3,12 +3,12 @@ import {
     ProgressPlugin,
     DefinePlugin,
     HotModuleReplacementPlugin,
-} from 'webpack';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
-import ESLintWebpackPlugin from 'eslint-webpack-plugin';
-import { BuildOptions } from './types/config';
+} from "webpack";
+import HtmlWebpackPlugin from "html-webpack-plugin";
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
+import ESLintWebpackPlugin from "eslint-webpack-plugin";
+import { BuildOptions } from "./types/config";
 
 export function BuildPlugins({ paths, isDev }: BuildOptions): WebpackPluginInstance[] {
     const plugins = [
@@ -18,8 +18,8 @@ export function BuildPlugins({ paths, isDev }: BuildOptions): WebpackPluginInsta
         new ESLintWebpackPlugin(),
         new ProgressPlugin(),
         new MiniCssExtractPlugin({
-            filename: 'css/[name].[contenthash:8].css',
-            chunkFilename: 'css/[name].[contenthash:8].css',
+            filename: "css/[name].[contenthash:8].css",
+            chunkFilename: "css/[name].[contenthash:8].css",
         }),
         new DefinePlugin({
             __IS_DEV__: JSON.stringify(isDev),

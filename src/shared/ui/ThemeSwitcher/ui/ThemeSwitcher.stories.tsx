@@ -1,16 +1,16 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
-import 'app/styles/index.scss';
-import 'app/styles/themes/dark.scss';
-import 'app/styles/themes/light.scss';
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from 'app/providers/ThemeProvider';
-import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
+import "app/styles/index.scss";
+import "app/styles/themes/dark.scss";
+import "app/styles/themes/light.scss";
+import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
+import { Theme } from "app/providers/ThemeProvider";
+import { ThemeSwitcher } from "shared/ui/ThemeSwitcher";
 
 const meta: Meta<typeof ThemeSwitcher> = {
-    title: 'shared/ThemeSwitcher',
+    title: "shared/ThemeSwitcher",
     component: ThemeSwitcher,
-    tags: ['autodocs'],
+    tags: ["autodocs"],
 };
 
 export default meta;

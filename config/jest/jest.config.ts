@@ -3,7 +3,7 @@
  * https://jestjs.io/docs/configuration
  */
 
-import path from 'path';
+import path from "path";
 
 export default {
     // All imported modules in your tests should be mocked automatically
@@ -20,35 +20,35 @@ export default {
         __IS_DEV__: true,
     },
     clearMocks: true,
-    testEnvironment: 'jsdom',
+    testEnvironment: "jsdom",
     coveragePathIgnorePatterns: [
-        '/node_modules/',
+        "/node_modules/",
     ],
     moduleDirectories: [
-        'node_modules',
+        "node_modules",
     ],
     moduleFileExtensions: [
-        'js',
-        'mjs',
-        'cjs',
-        'jsx',
-        'ts',
-        'tsx',
-        'json',
-        'node',
+        "js",
+        "mjs",
+        "cjs",
+        "jsx",
+        "ts",
+        "tsx",
+        "json",
+        "node",
     ],
-    rootDir: '../../',
-    setupFilesAfterEnv: ['<rootDir>/config/jest/setupTests.ts'],
+    rootDir: "../../",
+    setupFilesAfterEnv: ["<rootDir>/config/jest/setupTests.ts"],
     modulePaths: [
-        '<rootDir>src',
+        "<rootDir>src",
     ],
     testMatch: [
-        '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
+        "<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)",
     ],
     moduleNameMapper: {
-        '\\.s?css$': 'identity-obj-proxy',
-        '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
-        'entities/(.*)': '<rootDir>src/entities/$1',
+        "\\.s?css$": "identity-obj-proxy",
+        "\\.svg": path.resolve(__dirname, "jestEmptyComponent.tsx"),
+        "entities/(.*)": "<rootDir>src/entities/$1",
     },
     // Indicates whether the coverage information should be collected while executing the test
     // collectCoverage: false,

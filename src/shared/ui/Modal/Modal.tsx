@@ -1,10 +1,10 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from "shared/lib/classNames/classNames";
 import React, {
     ReactNode, useCallback, useEffect, useRef, useState,
-} from 'react';
-import { Portal } from 'shared/ui/Portal/Portal';
-import CloseIcon from 'shared/assets/icons/close.svg';
-import cls from './Modal.module.scss';
+} from "react";
+import { Portal } from "shared/ui/Portal/Portal";
+import CloseIcon from "shared/assets/icons/close.svg";
+import cls from "./Modal.module.scss";
 
 interface ModalProps {
     className?: string;
@@ -48,18 +48,18 @@ export const Modal = (props: ModalProps) => {
     }, [onClose]);
 
     const onKeyDown = useCallback((e: KeyboardEvent) => {
-        if (e.key === 'Escape') {
+        if (e.key === "Escape") {
             closeHandler();
         }
     }, [closeHandler]);
 
     useEffect(() => {
         if (isOpen) {
-            window.addEventListener('keydown', onKeyDown);
+            window.addEventListener("keydown", onKeyDown);
         }
         return () => {
             clearTimeout(timerRef.current);
-            window.removeEventListener('keydown', onKeyDown);
+            window.removeEventListener("keydown", onKeyDown);
         };
     }, [isOpen, onKeyDown]);
 

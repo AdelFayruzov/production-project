@@ -1,10 +1,10 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from "shared/lib/classNames/classNames";
 import {
     InputHTMLAttributes, memo, ChangeEvent, ReactElement, useEffect, useRef,
-} from 'react';
-import cls from './Input.module.scss';
+} from "react";
+import cls from "./Input.module.scss";
 
-type InputHTMLProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>
+type InputHTMLProps = Omit<InputHTMLAttributes<HTMLInputElement>, "value" | "onChange">
 
 interface InputProps extends InputHTMLProps{
     className?: string;
@@ -19,7 +19,7 @@ export const Input = memo((props: InputProps) => {
         className,
         value,
         onChange,
-        type = 'text',
+        type = "text",
         placeholder,
         icon,
         autofocus,

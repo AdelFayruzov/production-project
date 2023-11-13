@@ -1,15 +1,15 @@
-import { classNames } from 'shared/lib/classNames/classNames';
-import { useState } from 'react';
-import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
-import LangSwitcher from 'shared/ui/LangSwitcher/LangSwitcher';
-import { useTranslation } from 'react-i18next';
-import { Button, ButtonTheme } from 'shared/ui/Button';
-import { ButtonSize } from 'shared/ui/Button/ui/Button';
-import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import MainIcon from 'shared/assets/icons/main.svg';
-import AboutIcon from 'shared/assets/icons/about.svg';
-import cls from './Sidebar.module.scss';
+import { classNames } from "shared/lib/classNames/classNames";
+import { useState } from "react";
+import { ThemeSwitcher } from "shared/ui/ThemeSwitcher";
+import LangSwitcher from "shared/ui/LangSwitcher/LangSwitcher";
+import { useTranslation } from "react-i18next";
+import { Button, ButtonTheme } from "shared/ui/Button";
+import { ButtonSize } from "shared/ui/Button/ui/Button";
+import { AppLink, AppLinkTheme } from "shared/ui/AppLink/AppLink";
+import { RoutePath } from "shared/config/routeConfig/routeConfig";
+import MainIcon from "shared/assets/icons/main.svg";
+import AboutIcon from "shared/assets/icons/about.svg";
+import cls from "./Sidebar.module.scss";
 
 interface SidebarProps {
     className?: string;
@@ -38,7 +38,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
                 square
                 size={ButtonSize.L}
             >
-                {collapsed ? t('>') : t('<')}
+                {collapsed ? t(">") : t("<")}
             </Button>
             <div className={cls.items}>
                 <AppLink
@@ -47,7 +47,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
                     to={RoutePath.main}
                 >
                     <MainIcon className={cls.icon} />
-                    <span className={cls.link}>{t('Главная')}</span>
+                    <span className={cls.link}>{t("Главная")}</span>
                 </AppLink>
                 <AppLink
                     className={cls.item}
@@ -55,7 +55,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
                     to={RoutePath.about}
                 >
                     <AboutIcon className={cls.icon} />
-                    <span className={cls.link}>{t('О сайте')}</span>
+                    <span className={cls.link}>{t("О сайте")}</span>
                 </AppLink>
             </div>
             <div className={cls.switchers}>
