@@ -1,7 +1,7 @@
 import { Modal } from "shared/ui/Modal/Modal";
 import { Suspense } from "react";
 import Loader from "shared/ui/Loader/Loader";
-import { LoginFormLazy } from "../LoginForm/LoginFrom.lazy";
+import { LoginFormLazy } from "../LoginForm/LoginForm.lazy";
 
 interface LoginModalProps {
     isOpen: boolean;
