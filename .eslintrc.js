@@ -48,6 +48,7 @@ module.exports = {
         "jsx-a11y/no-static-element-interactions": "off",
         "jsx-a11y/click-events-have-key-events": "off",
         "no-param-reassign": "off",
+        "no-undef": "off",
         "i18next/no-literal-string": ["error", {
             markupOnly: true,
             ignoreAttribute: ["data-testid", "to"],
@@ -59,6 +60,7 @@ module.exports = {
     },
     globals: {
         __IS_DEV__: true,
+        __API__: true,
     },
     overrides: [{
         files: ["**/src/**/*.test.{ts,tsx}"],

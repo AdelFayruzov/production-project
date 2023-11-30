@@ -10,7 +10,7 @@ import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
 import ESLintWebpackPlugin from "eslint-webpack-plugin";
 import { BuildOptions } from "./types/config";
 
-export function BuildPlugins({ paths, isDev }: BuildOptions): WebpackPluginInstance[] {
+export function BuildPlugins({ paths, isDev, apiUrl }: BuildOptions): WebpackPluginInstance[] {
     const plugins = [
         new HtmlWebpackPlugin({
             template: paths.html,
@@ -23,6 +23,7 @@ export function BuildPlugins({ paths, isDev }: BuildOptions): WebpackPluginInsta
         }),
         new DefinePlugin({
             __IS_DEV__: JSON.stringify(isDev),
+            __API__: JSON.stringify(apiUrl),
         }),
     ];
 
