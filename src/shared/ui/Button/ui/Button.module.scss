@@ -3,6 +3,10 @@
   color: var(--primary-color);
   border-radius: 12px;
   padding: 6px 15px;
+
+  &:hover {
+    filter: opacity(0.8);
+  }
 }
 
 .clear, .clearInverted {
@@ -34,10 +38,18 @@
   background: var(--inverted-bg-color);
   color: var(--inverted-primary-color);
   border: none;
+}
 
-  &:hover {
-    filter: opacity(0.8);
-  }
+.backgroundRed {
+  background: var(--light-red);
+  color: var(--primary-color);
+  border: none;
+}
+
+.backgroundBlue {
+  background: var(--blue);
+  color: var(--primary-color);
+  border: none;
 }
 
 .square.size_m {

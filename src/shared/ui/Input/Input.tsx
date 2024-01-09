@@ -1,4 +1,4 @@
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames, Mods } from "shared/lib/classNames/classNames";
 import {
     InputHTMLAttributes, memo, ChangeEvent, ReactElement, useEffect, useRef,
 } from "react";
@@ -8,10 +8,11 @@ type InputHTMLProps = Omit<InputHTMLAttributes<HTMLInputElement>, "value" | "onC
 
 interface InputProps extends InputHTMLProps{
     className?: string;
-    value?: string;
+    value?: string | number;
     onChange?: (value: string) => void;
     icon?: ReactElement;
     autofocus?: boolean;
+    readonly?: boolean;
 }
 
 export const Input = memo((props: InputProps) => {
@@ -23,6 +24,7 @@ export const Input = memo((props: InputProps) => {
         placeholder,
         icon,
         autofocus,
+        readonly,
         ...otherProps
     } = props;
 
@@ -38,8 +40,12 @@ export const Input = memo((props: InputProps) => {
         onChange?.(e.target.value);
     };
 
+    const mods: Mods = {
+        [cls.readonly]: readonly,
+    };
+
     return (
-        <div className={classNames(cls.InputWrapper, {}, [className])}>
+        <div className={classNames(cls.InputWrapper, mods, [className])}>
             {/* <div className={cls.icon}> */}
             {/*    {icon} */}
             {/* </div> */}
@@ -49,6 +55,7 @@ export const Input = memo((props: InputProps) => {
                 className={cls.input}
                 type={type}
                 value={value}
+                readOnly={readonly}
                 onChange={onChangeHandler}
                 {...otherProps}
             />
