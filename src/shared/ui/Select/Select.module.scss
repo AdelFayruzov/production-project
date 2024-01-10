@@ -1,16 +1,21 @@
 .Wrapper {
   display: flex;
+  align-items: center;
+}
+
+.label {
+  margin-right: 5px;
 }
 
 .select {
-  border-radius: 12px;
+  border-radius: 6px;
   min-height: 30px;
   line-height: 26px;
   padding: 4px 10px;
   font-size: var(--font-size-m);
-  border:  1px solid var(--additional-secondary-color);
+  border:  1px solid var(--secondary-color);
   color: var(--primary-color);
-  background: var(--secondary-color);
+  background: var(--bg-color);
 
   &:focus {
     outline: 1px solid var(--primary-color);

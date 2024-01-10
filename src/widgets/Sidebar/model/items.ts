@@ -8,7 +8,8 @@ import i18n from "i18next";
 export interface SidebarItemType {
     path: string,
     text: string,
-    Icon: FC<SVGProps<SVGSVGElement>>
+    Icon: FC<SVGProps<SVGSVGElement>>,
+    authOnly?: boolean
 }
 
 export const SidebarItemsList: SidebarItemType[] = [
@@ -16,6 +17,7 @@ export const SidebarItemsList: SidebarItemType[] = [
         path: RoutePath.profile,
         text: "Профиль",
         Icon: ProfileIcon,
+        authOnly: true,
     },
     {
         path: RoutePath.main,

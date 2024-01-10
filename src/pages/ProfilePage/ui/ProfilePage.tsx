@@ -17,7 +17,9 @@ import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { useSelector } from "react-redux";
 import ProfilePageHeader from "pages/ProfilePage/ui/ProfilePageHeader/ProfilePageHeader";
 import { getProfileForm } from "entities/Profile/model/selectors/getProfileForm/getProfileForm";
-import { Currency } from "shared/consts/common";
+
+import { Currency } from "entities/Currency/model/types/currency";
+import { Country } from "entities/Country/model/types/country";
 
 interface ProfilePageProps {
     className?: string;
@@ -62,9 +64,13 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
         dispatch(profileActions.updateProfile({ age: Number(age || 0) }));
     }, [dispatch]);
 
-    const onChangeCurrency = useCallback((currency?: string) => {
-        // dispatch(profileActions.updateProfile({ currency: Currency[currency] || "" }));
-    }, []);
+    const onChangeCurrency = useCallback((currency: Currency) => {
+        dispatch(profileActions.updateProfile({ currency }));
+    }, [dispatch]);
+
+    const onChangeCountry = useCallback((country: Country) => {
+        dispatch(profileActions.updateProfile({ country }));
+    }, [dispatch]);
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
@@ -78,6 +84,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
                     onChangeCity={onChangeCity}
                     onChangeAge={onChangeAge}
                     onChangeCurrency={onChangeCurrency}
+                    onChangeCountry={onChangeCountry}
                     data={formData}
                     readonly={readonly}
                     isLoading={isLoading}

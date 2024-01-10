@@ -27,6 +27,7 @@ const ProfilePageHeader = ({ className, readonly }: ProfilePageHeaderProps) => {
 
     const onSave = useCallback(() => {
         dispatch(updateProfileData());
+        dispatch(profileActions.setReadonly(true));
     }, [dispatch]);
 
     return (
